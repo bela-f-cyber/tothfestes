@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tóth Festés Kft. – Festés, mázolás, tapétázás</title>
+  <meta name="description" content="Lakások, házak és irodák festése precízen, határidőre.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="loader" aria-hidden="true">
+  <img src="toth_festes_logo_transparent.png" alt="" class="loader-logo">
+  <div class="spinner"></div>
+</div>
+<noscript><style>#loader { display: none; }</style></noscript>
+
+  <header class="topbar">
+    <a class="logo">Tóth<span> Festés</span>
+</a>
+  <a href="#top"><img class="header-photo" src="toth_festes_logo_transparent.png" alt="Színvonal Festő"></a>
+    
+
+    <button class="menu-btn" id="menuBtn" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="sidePanel">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Oldalsó menü (jobbról csúszik be) -->
+  <div class="overlay" id="overlay"></div>
+  <nav class="side-panel" id="sidePanel" aria-label="Főmenü" aria-hidden="true">
+    <button class="close-btn" id="closeBtn" aria-label="Menü bezárása">&times;</button>
+    <ul>
+      <!-- Új menüpontot ide tudsz felvenni: másolj egy <li>-t -->
+      <li><a href="#top">Kezdőlap</a></li>
+      <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+      <li><a href="#rolunk">Rólunk</a></li>
+      <li><a href="#kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Tiszta vonalak.<br>Egyenletes felület.</h1>
+      <p>Lakások, házak és irodák festése, mázolása, tapétázása. Pontos árajánlat, betartott határidő.</p>
+      <a class="btn" href="ajanlatok.html">Kérjen ajánlatot</a>
+    </section>
+
+    <section class="section" id="szolgaltatasok">
+      <h2>Szolgáltatások</h2>
+      <div class="grid">
+        <article>
+          <h3>Beltéri festés</h3>
+          <p>Glettelés, alapozás és festés, bútorok védelmével, takarítással együtt.</p>
+        </article>
+        <article>
+          <h3>Homlokzatfestés</h3>
+          <p>Időjárásálló festékek, állványozással, családi házaktól társasházakig.</p>
+        </article>
+        <article>
+          <h3>Mázolás, tapétázás</h3>
+          <p>Ajtók, ablakok, korlátok mázolása; mintás és sima tapéták felrakása.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt" id="rolunk">
+      <h2>Rólunk</h2>
+      <p class="lead">Ide írd a cég bemutatkozását: hány éve dolgoztok, milyen munkákra vagytok büszkék.</p>
+    </section>
+
+    <section class="section" id="kapcsolat">
+      <h2>Kapcsolat</h2>
+      <p>Telefon: <a href="tel:+36000000000">+36 00 000 0000</a></p>
+      <p>E-mail: <a href="mailto:info@pelda.hu">info@pelda.hu</a></p>
+    </section>
+  </main>
+
+  <footer>© 2026 Tóth Festés Kft.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajánlatok – Színvonal Festő Kft.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --ink: #1d2433;
+      --paper: #f7f8fa;
+      --accent: #1f4fd8;
+      --line: #dfe3ea;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    /* Felső sáv: bal oldalon a cím, jobb oldalon a gomb */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar h1 {
+      font-family: "Bricolage Grotesque", system-ui, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+    }
+    .back-btn:hover { background: #173ca8; }
+    .back-btn:focus-visible { outline: 3px solid #f2b705; outline-offset: 3px; }
+
+    main { max-width: 1000px; margin: 0 auto; padding: 48px 24px; }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Ajánlatok</h1>
+    
+    <a href="#top"><img class="header-photo" src="toth_festes_logo_transparent.png" alt="Színvonal Festő"></a>
+
+    <a class="back-btn" href="index.html">Főoldal</a>
+  </header>
+
+  <main>
+    <!-- Ide kerülnek az ajánlatok -->
+     <section class="section" id="szolgaltatasok">
+      <h2>Szolgáltatások</h2>
+      <div class="grid">
+        <article>
+          <h3>Beltéri festés</h3>
+          <p>Glettelés, alapozás és festés, bútorok védelmével, takarítással együtt.</p>
+        </article>
+        <article>
+          <h3>Homlokzatfestés</h3>
+          <p>Időjárásálló festékek, állványozással, családi házaktól társasházakig.</p>
+        </article>
+        <article>
+          <h3>Mázolás, tapétázás</h3>
+          <p>Ajtók, ablakok, korlátok mázolása; mintás és sima tapéták felrakása.</p>
+        </article>
+      </div>
+    </section>
+
+
+  </main>
+
+</body>
+</html>

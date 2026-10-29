@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Szolgáltatások – Színvonal Festő Kft.</title>
+  <meta name="description" content="Beltéri festés, homlokzatfestés, mázolás és tapétázás részletesen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="szolgaltatasokstyle.css">
+ 
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="logo" href="index.html">Tóth<span> Festés</span></a>
+
+    <a href="#top" class="logo">
+      <img class="header-photo" src="toth_festes_logo_transparent.png" alt="Színvonal Festő">
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="sidePanel">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Oldalsó menü (jobbról csúszik be) -->
+  <div class="overlay" id="overlay"></div>
+  <nav class="side-panel" id="sidePanel" aria-label="Főmenü" aria-hidden="true">
+    <button class="close-btn" id="closeBtn" aria-label="Menü bezárása">&times;</button>
+    <ul>
+      <!-- Új menüpontot ide tudsz felvenni: másolj egy <li>-t -->
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+      <li><a href="index.html#rolunk">Rólunk</a></li>
+      <li><a href="index.html#kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page-head">
+      <h1>Szolgáltatások</h1>
+      <p>Itt részletesen megtalálja, miben tudunk segíteni és láthatja referencia munkáinkat is.</p>
+    </section>
+
+    <div class="services-wrap">
+
+      <!-- ===== EGY SZOLGÁLTATÁS ===== 
+           Új szolgáltatás felvételéhez másold ki a teljes <article> blokkot,
+           és írd át a szövegeket. Az id-vel lehet rá linkelni (pl. szolgaltatasok.html#beltéri). -->
+      <article class="service" id="belteri">
+        <h2>Beltéri festés</h2>
+        <p>Ide írd a szolgáltatás leírását: mit vállaltok, milyen festékkel dolgoztok, hogyan zajlik a munka.</p>
+        <ul>
+          <li>Falak előkészítése, glettelés, csiszolás</li>
+          <li>Alapozás és festés két rétegben</li>
+          <li>Bútorok és padló védelme</li>
+          <li>Takarítás a munka végén</li>
+        </ul>
+        <p class="meta">Átlagos átfutás: 2–5 nap · Ár: egyedi ajánlat alapján</p>
+      </article>
+
+      <article class="service" id="homlokzat">
+        <h2>Homlokzatfestés</h2>
+        <p>Ide írd a szolgáltatás leírását: milyen épületeket festetek, milyen festékeket használtok.</p>
+        <ul>
+          <li>Felület tisztítása, javítása</li>
+          <li>Időjárásálló alapozó és festék</li>
+          <li>Állványozás</li>
+        </ul>
+        <p class="meta">Átlagos átfutás: 5–14 nap · Ár: egyedi ajánlat alapján</p>
+      </article>
+
+      <article class="service" id="mazolas">
+        <h2>Mázolás és tapétázás</h2>
+        <p>Ide írd a szolgáltatás leírását.</p>
+        <ul>
+          <li>Ajtók, ablakok, korlátok mázolása</li>
+          <li>Sima és mintás tapéták felrakása</li>
+          <li>Régi tapéta eltávolítása</li>
+        </ul>
+        <p class="meta">Átlagos átfutás: 1–3 nap · Ár: egyedi ajánlat alapján</p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>© 2026 Tóth Festés Kft.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
