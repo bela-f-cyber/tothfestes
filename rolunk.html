@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rólunk – Színvonal Festő Kft.</title>
+  <meta name="description" content="Ismerje meg a Színvonal Festő Kft. történetét, értékeit és csapatát.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="szolgaltatasokstyle.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="logo" href="index.html">Tóth<span> Festés</span></a>
+
+    <a href="#top" class="logo">
+      <img class="header-photo" src="toth_festes_logo_transparent.png" alt="Színvonal Festő">
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="sidePanel">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Oldalsó menü (jobbról csúszik be) -->
+  <div class="overlay" id="overlay"></div>
+  <nav class="side-panel" id="sidePanel" aria-label="Főmenü" aria-hidden="true">
+    <button class="close-btn" id="closeBtn" aria-label="Menü bezárása">&times;</button>
+    <ul>
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+      <li><a href="rolunk.html">Rólunk</a></li>
+      <li><a href="index.html#kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+    <section class="page-head">
+      <h1>Rólunk</h1>
+      <p>Hosszabb bemutatkozásunk</p>
+    </section>
+
+    <div class="services-wrap">
+
+      <!-- ===== EGY BLOKK =====
+           Új blokk felvételéhez másold ki a teljes <article> részt,
+           és írd át a szövegeket. Az id-vel lehet rá linkelni (pl. rolunk.html#tortenet). -->
+
+      <!-- Bemutatkozás -->
+      <article class="service" id="bemutatkozas">
+        <h2>Kik vagyunk?</h2>
+        <p>Ide írd a cég bemutatkozását: mivel foglalkoztok, mióta működtök, mi a célotok.</p>
+        <p>Több bekezdést is írhatsz, minden bekezdés kapjon egy új &lt;p&gt; sort.</p>
+      </article>
+
+      <!-- Történet -->
+      <article class="service" id="tortenet">
+        <h2>Történetünk</h2>
+        <p>Ide írd, hogyan indult a cég, mik voltak a fontosabb mérföldkövek.</p>
+        <p class="meta">Alapítás éve: 20XX · Elvégzett munkák: 000+ · Elégedett ügyfelek: 000+</p>
+      </article>
+
+      <!-- Értékek -->
+      <article class="service" id="ertekeink">
+        <h2>Amit fontosnak tartunk</h2>
+        <p>Ide írd, milyen elvek mentén dolgoztok.</p>
+        <ul>
+          <li>Precíz, igényes munkavégzés</li>
+          <li>Határidők betartása</li>
+          <li>Átlátható, korrekt árazás</li>
+          <li>Tiszta, rendezett munkaterület</li>
+        </ul>
+      </article>
+
+      <!-- Csapat -->
+      <article class="service" id="csapat">
+        <h2>Csapatunk</h2>
+        <p>Ide írd, kik dolgoznak nálatok, hány fős a csapat, milyen tapasztalattal.</p>
+        <ul>
+          <li>Név – beosztás, rövid leírás</li>
+          <li>Név – beosztás, rövid leírás</li>
+        </ul>
+      </article>
+
+      <!-- Felhívás kapcsolatfelvételre -->
+      <article class="service" id="ajanlat">
+        <h2>Kérjen ajánlatot!</h2>
+        <p>Szívesen megnézzük a felújítandó felületet, és egyedi ajánlatot adunk.</p>
+        <p class="meta"><a href="ajanlatok.html">Lépjen velünk kapcsolatba →</a></p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>© 2026 Tóth Festés Kft.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

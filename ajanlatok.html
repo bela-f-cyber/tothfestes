@@ -54,6 +54,50 @@
     .back-btn:focus-visible { outline: 3px solid #f2b705; outline-offset: 3px; }
 
     main { max-width: 1000px; margin: 0 auto; padding: 48px 24px; }
+
+    /* Üzenetküldő űrlap */
+    .contact-form {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 600px;
+    }
+    .contact-form label { font-weight: 600; }
+    .contact-form textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 12px 14px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      resize: vertical;
+    }
+    .contact-form textarea:focus-visible {
+      outline: 3px solid #f2b705;
+      outline-offset: 2px;
+    }
+    .contact-form button {
+      align-self: flex-start;
+      padding: 10px 26px;
+      background: var(--accent);
+      color: #fff;
+      font: inherit;
+      font-weight: 600;
+      border: 0;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .contact-form button:hover { background: #173ca8; }
+    .contact-form button:disabled { opacity: .6; cursor: wait; }
+    .contact-form button:focus-visible { outline: 3px solid #f2b705; outline-offset: 3px; }
+    .form-status { min-height: 1.6em; font-weight: 600; }
+    .form-status.ok { color: #1a7f37; }
+    .form-status.error { color: #c62828; }
+    /* Spam elleni rejtett mező */
+    .hp-field { position: absolute; left: -9999px; }
   </style>
 </head>
 <body>
@@ -86,8 +130,73 @@
       </div>
     </section>
 
+    <!-- Üzenetküldő mező -->
+    <section class="section" id="uzenet">
+      <h2>Írjon nekünk</h2>
+      <form class="contact-form" id="contactForm">
+        <label for="message">Üzenet</label>
+        <textarea id="message" name="message" placeholder="Írja ide az üzenetét..." required></textarea>
+
+        <!-- Rejtett mező: botok kitöltik, emberek nem látják -->
+        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
+
+        <button type="submit" id="sendBtn">Küldés</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
 
   </main>
+
+  <script>
+    // === BEÁLLÍTÁS ===
+    // Ide kerül a Web3Forms hozzáférési kulcs (lásd lent a lépéseket).
+    // A kulcs nem titok, a kód részeként nyugodtan látszhat.
+    const ACCESS_KEY = "5e9da6b7-03d8-493d-b106-71965b432511";
+    // =================
+
+    const form = document.getElementById("contactForm");
+    const btn = document.getElementById("sendBtn");
+    const statusEl = document.getElementById("formStatus");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const message = form.message.value.trim();
+      if (!message) return;
+
+      btn.disabled = true;
+      statusEl.className = "form-status";
+      statusEl.textContent = "Küldés folyamatban...";
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            access_key: ACCESS_KEY,
+            subject: "Új üzenet a weboldalról (Ajánlatok)",
+            from_name: "Színvonal Festő weboldal",
+            message: message,
+            botcheck: form.botcheck.checked
+          })
+        });
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          statusEl.className = "form-status ok";
+          statusEl.textContent = "Köszönjük, az üzenet elküldve!";
+          form.reset();
+        } else {
+          throw new Error(result.message || "Ismeretlen hiba");
+        }
+      } catch (err) {
+        statusEl.className = "form-status error";
+        statusEl.textContent = "Nem sikerült elküldeni. Kérjük, próbálja újra később.";
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  </script>
 
 </body>
 </html>
