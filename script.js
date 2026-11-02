@@ -22,7 +22,7 @@ panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMe
   const loader = document.getElementById("loader");
   if (!loader) return;
 
-  const MIN_TIME = 1000; // loader shows at least 1 second
+  const MIN_TIME = 500; // loader shows at least 1 second
   const MAX_TIME = 4000; // safety net: never block longer than this
   const start = Date.now();
   let done = false;
